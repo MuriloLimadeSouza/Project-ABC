@@ -34,7 +34,24 @@ func _on_Button3_pressed():
 	"first_time": true,
 	"player_name": "",
 	"max_points": 0,
-	"teacher": false
+	"teacher": false,
+	"colorblind": false
 }
 	PlayerVars.save_game_data()
 	get_tree().change_scene("res://lan/inicial_screen.tscn")
+
+func _on_Button4_pressed():
+	if OS.has_feature("HTML5"):
+		JavaScript.eval("window.open('https://github.com/MuriloLimadeSouza/Project-ABC')")
+	else:
+		OS.shell_open("https://github.com/MuriloLimadeSouza/Project-ABC")
+
+func _on_Button5_pressed():
+	match PlayerVars.player_data["colorblind"]:
+		false:
+			PlayerVars.player_data["colorblind"] = true
+		true:
+			PlayerVars.player_data["colorblind"] = false
+	PlayerVars.save_game_data()
+	get_tree().change_scene("res://lan/inicial_screen.tscn")
+

@@ -21,9 +21,9 @@ func _on_Button_pressed():
 
 func _on_TextureButton2_pressed():
 	if OS.has_feature("HTML5"):
-		JavaScript.eval("window.open('https://itch.io/this-page-does-not-exist')")
+		JavaScript.eval("window.open('https://abc-simples-br.itch.io/abc-simples-br')")
 	else:
-		OS.shell_open("https://itch.io/this-page-does-not-exist")
+		OS.shell_open("https://abc-simples-br.itch.io/abc-simples-br")
 
 func _on_Button3_pressed():
 	get_tree().quit()

@@ -108,6 +108,23 @@ custom_styles/disabled = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
 text = "deletar"
 
+[node name="Button4" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -641.0
+margin_bottom = 98.0
+text = " ver no github "
+
+[node name="Button5" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -196.0
+margin_right = 759.0
+text = "mudar cor
+(caso daltônico)"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]

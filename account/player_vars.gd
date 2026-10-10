@@ -10,7 +10,8 @@ var player_data = {
 	"first_time": true,
 	"player_name": "",
 	"max_points": 0,
-	"teacher": false
+	"teacher": false,
+	"colorblind": false
 }
 
 func _ready():
