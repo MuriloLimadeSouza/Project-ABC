@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://base_font_theme.tres" type="Theme" id=1]
 [ext_resource path="res://actividades/bars/bar_manager.gd" type="Script" id=2]
@@ -6,9 +6,6 @@
 [ext_resource path="res://scrolling_background.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
@@ -45,11 +42,12 @@ custom_constants/separation = 45
 alignment = 1
 script = ExtResource( 2 )
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 51.0
-margin_top = 915.0
-margin_right = 676.0
-margin_bottom = 1137.0
-custom_fonts/font = SubResource( 2 )
-
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 16.0
+margin_top = 911.0
+margin_right = 894.0
+margin_bottom = 1064.0
+bbcode_enabled = true
+fit_content_height = true

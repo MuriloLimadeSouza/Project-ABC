@@ -26,6 +26,7 @@ func _ready():
 		"conversion": $ScrollContainer/VBoxContainer/RichTextLabel8,
 		"problems": $ScrollContainer/VBoxContainer/RichTextLabel7,
 		"times": $ScrollContainer/VBoxContainer/RichTextLabel6,
+		"time": $ScrollContainer/VBoxContainer/RichTextLabel12,
 		"division_in_equal_parts": $ScrollContainer/VBoxContainer/RichTextLabel4,
 		"drawing": $ScrollContainer/VBoxContainer/RichTextLabel10,
 		"spacial_geometry": $ScrollContainer/VBoxContainer/RichTextLabel9,

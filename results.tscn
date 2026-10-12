@@ -24,7 +24,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 1200.0
-margin_bottom = 5743.0
+margin_bottom = 5866.0
 rect_min_size = Vector2( 1200, 0 )
 custom_constants/separation = -75
 alignment = 1
@@ -124,46 +124,55 @@ bbcode_text = "[wave][center]conversão de medidas:"
 text = "conversão de medidas:"
 fit_content_height = true
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+[node name="RichTextLabel12" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
 margin_top = 1845.0
 margin_right = 1200.0
 margin_bottom = 2043.0
+bbcode_enabled = true
+bbcode_text = "[wave][center]medição de tempo:"
+text = "medição de tempo:"
+fit_content_height = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1968.0
+margin_right = 1200.0
+margin_bottom = 2166.0
 bbcode_enabled = true
 bbcode_text = "[wave][center]divisão em partes iguais"
 text = "divisão em partes iguais"
 fit_content_height = true
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 1968.0
+margin_top = 2091.0
 margin_right = 1200.0
-margin_bottom = 2166.0
+margin_bottom = 2289.0
 bbcode_enabled = true
 bbcode_text = "[wave][center]geometria espacial:"
 text = "geometria espacial:"
 fit_content_height = true
 
 [node name="RichTextLabel10" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 2091.0
+margin_top = 2214.0
 margin_right = 1200.0
-margin_bottom = 2388.0
+margin_bottom = 2511.0
 bbcode_enabled = true
 bbcode_text = "[wave][center]desenho de formas geométricas:"
 text = "desenho de formas geométricas:"
 fit_content_height = true
 
 [node name="RichTextLabel11" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 2313.0
+margin_top = 2436.0
 margin_right = 1200.0
-margin_bottom = 2511.0
+margin_bottom = 2634.0
 bbcode_enabled = true
 bbcode_text = "[wave][center]noção geométrica:"
 text = "noção geométrica:"
 fit_content_height = true
 
 [node name="port" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 2436.0
+margin_top = 2559.0
 margin_right = 1200.0
-margin_bottom = 2733.0
+margin_bottom = 2856.0
 bbcode_enabled = true
 bbcode_text = "[wave][center][rainbow]português
 "
@@ -172,9 +181,9 @@ text = "português
 fit_content_height = true
 
 [node name="Label6" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 2658.0
+margin_top = 2781.0
 margin_right = 1200.0
-margin_bottom = 2955.0
+margin_bottom = 3078.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -187,9 +196,9 @@ text = "reconhecimento de letras:
 fit_content_height = true
 
 [node name="Label7" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 2880.0
+margin_top = 3003.0
 margin_right = 1200.0
-margin_bottom = 3177.0
+margin_bottom = 3300.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -202,9 +211,9 @@ text = "formação de palavras
 fit_content_height = true
 
 [node name="Label8" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 3102.0
+margin_top = 3225.0
 margin_right = 1200.0
-margin_bottom = 3399.0
+margin_bottom = 3522.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -217,9 +226,9 @@ text = "interpretação:
 fit_content_height = true
 
 [node name="Label9" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 3324.0
+margin_top = 3447.0
 margin_right = 1200.0
-margin_bottom = 3621.0
+margin_bottom = 3744.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -232,9 +241,9 @@ text = "gramática básica:
 fit_content_height = true
 
 [node name="Label10" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 3546.0
+margin_top = 3669.0
 margin_right = 1200.0
-margin_bottom = 3843.0
+margin_bottom = 3966.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -247,9 +256,9 @@ text = "gêneros textuais
 fit_content_height = true
 
 [node name="Label11" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 3768.0
+margin_top = 3891.0
 margin_right = 1200.0
-margin_bottom = 4065.0
+margin_bottom = 4188.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -262,9 +271,9 @@ text = "maiúsculas e minúsculas:
 fit_content_height = true
 
 [node name="Label12" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 3990.0
+margin_top = 4113.0
 margin_right = 1200.0
-margin_bottom = 4287.0
+margin_bottom = 4410.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -277,9 +286,9 @@ text = "pontuação:
 fit_content_height = true
 
 [node name="Label13" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 4212.0
+margin_top = 4335.0
 margin_right = 1200.0
-margin_bottom = 4509.0
+margin_bottom = 4632.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -292,9 +301,9 @@ text = "acentuação
 fit_content_height = true
 
 [node name="Label14" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 4434.0
+margin_top = 4557.0
 margin_right = 1200.0
-margin_bottom = 4731.0
+margin_bottom = 4854.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -307,9 +316,9 @@ text = "singular e plural
 fit_content_height = true
 
 [node name="Label15" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 4656.0
+margin_top = 4779.0
 margin_right = 1200.0
-margin_bottom = 4953.0
+margin_bottom = 5076.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -322,9 +331,9 @@ text = "masculino e feminino
 fit_content_height = true
 
 [node name="Label16" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 4878.0
+margin_top = 5001.0
 margin_right = 1200.0
-margin_bottom = 5175.0
+margin_bottom = 5298.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -337,9 +346,9 @@ text = "verbos
 fit_content_height = true
 
 [node name="Label17" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 5100.0
+margin_top = 5223.0
 margin_right = 1200.0
-margin_bottom = 5397.0
+margin_bottom = 5520.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -352,9 +361,9 @@ text = "substantivos
 fit_content_height = true
 
 [node name="Label18" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 5322.0
+margin_top = 5445.0
 margin_right = 1200.0
-margin_bottom = 5619.0
+margin_bottom = 5742.0
 rect_min_size = Vector2( 1100, 0 )
 rect_clip_content = false
 bbcode_enabled = true
@@ -367,9 +376,9 @@ text = "análise linguística
 fit_content_height = true
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
-margin_top = 5544.0
+margin_top = 5667.0
 margin_right = 1200.0
-margin_bottom = 5743.0
+margin_bottom = 5866.0
 text = "
 "
 

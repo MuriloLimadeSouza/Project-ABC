@@ -5,8 +5,9 @@ onready var times_division = $"TabContainer/Matemática/ScrollContainer/VBoxCont
 onready var problems = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer4/LineEdit"
 onready var times = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer3/LineEdit"
 onready var conversion = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer5/LineEdit"
+onready var time = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer10/LineEdit"
 
-onready var division_in_equal_parts = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer6/LineEdit"
+onready var division_in_equal_parts = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer11/LineEdit"
 onready var spacial_geometry = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer7/LineEdit"
 onready var drawing = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer8/LineEdit"
 onready var spacial_notion = $"TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer9/LineEdit"
@@ -34,6 +35,7 @@ func _on_Button_pressed():
 		"problems": int(problems.text),
 		"times": int(times.text),
 		"conversion": int(conversion.text),
+		"time": int(time.text),
 		
 		"division_in_equal_parts": int(division_in_equal_parts.text),
 		"spacial_geometry": int(spacial_geometry.text),
@@ -54,6 +56,9 @@ func _on_Button_pressed():
 		"substantivos": int(substantivos.text),
 		"analise_ling": int(analise_ling.text),
 	}
+	
+	Lan.rand = PlayerVars.player_data["reversed"]
+	
 # 2. Guarda no Save e na variável global do Lan ANTES de ligar a rede
 	if "Save" in self or has_node("/root/Save"):
 		Save.lectures = lecture_data
@@ -73,7 +78,7 @@ func _on_Go_Back_pressed():
 
 func reset_all_inputs_to_one():
 	var all_inputs = [
-		addition_subtraction_input, times_division, problems, times, conversion,
+		addition_subtraction_input, times_division, problems, times, conversion, time,
 		division_in_equal_parts, spacial_geometry, drawing, spacial_notion,
 		rec_letras, juntar_letras, interpretacao, escrita_correta, generos,
 		maiuscula_minus, pontuacao, acentos, singular_plural, genero_gramatical,
@@ -104,3 +109,14 @@ func _ready():
 		
 			Lan.join_classroom(ip_code)
 			get_tree().change_scene("res://lan/lecture_manager.tscn")
+
+var texts = ["sim", "não"]
+
+func _on_Button4_pressed():
+	texts.invert()
+	$TabContainer/modificadores/VBoxContainer/RichTextLabel/Button4.text = texts[1]
+	match PlayerVars.player_data["reversed"]:
+		true:
+			PlayerVars.player_data["reversed"] = false
+		false:
+			PlayerVars.player_data["reversed"] = true

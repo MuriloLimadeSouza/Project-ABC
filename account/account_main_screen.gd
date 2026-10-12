@@ -7,6 +7,9 @@ func _ready():
 		false:
 			$Button.text = "clique aqui\n para entrar\n numa sala"
 	$RichTextLabel4.bbcode_text = "[center][wave]bem vindo\n" + PlayerVars.player_data["player_name"] + "!!"
+	if OS.has_feature("HTML5"):
+		$Button3.hide()
+	
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://account/settings.tscn")
 
@@ -61,6 +64,8 @@ const ALL_SUBJECTS = [
 	"problems",
 	"spacial_geometry",
 	"drawing",
+	"time",
+	"division_in_equal_parts",
 	"rec_letras",
 	"juntar_letras",
 	"interpretacao",

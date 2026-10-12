@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scrolling_background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/WhiteLearn/the_people.webp" type="Texture" id=2]
@@ -11,6 +11,11 @@ corner_radius_top_right = 40
 corner_radius_bottom_right = 40
 corner_radius_bottom_left = 40
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.117647, 0.341176, 0.611765, 0.498039 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,51 +23,179 @@ script = ExtResource( 3 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 1 )]
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_top = 0.194
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.639984
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchor_left = 0.501
-anchor_top = 0.5
-anchor_right = 0.501
-anchor_bottom = 0.5
-margin_left = -450.9
-margin_top = -502.0
-margin_right = 451.1
-margin_bottom = -190.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -682.0
+margin_top = 249.0
+margin_right = 665.0
+margin_bottom = 447.0
 bbcode_enabled = true
 bbcode_text = "[wave][center]informações da conta:"
 text = "informações da conta:"
+fit_content_height = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -400.0
-margin_top = -75.0
-margin_right = 747.0
-margin_bottom = 732.0
+margin_left = -709.0
+margin_top = -255.0
+margin_right = 1230.0
+margin_bottom = 716.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1323.0
+margin_bottom = 1113.0
+rect_clip_content = true
+custom_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1323.0
+margin_bottom = 99.0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 300, 0 )
 bbcode_enabled = true
-bbcode_text = "[wave]Nome:
+bbcode_text = "[wave]nome:"
+text = "nome:"
+fit_content_height = true
 
-Ocupação:
-
-Pontuação Máxima:"
-text = "Nome:
-
-Ocupação:
-
-Pontuação Máxima:"
-
-[node name="LineEdit" type="LineEdit" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -112.5
-margin_top = -72.0
-margin_right = 362.5
-margin_bottom = 26.0
+[node name="LineEdit" type="LineEdit" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 304.0
+margin_right = 804.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 500, 0 )
 max_length = 8
-placeholder_text = "clique aq"
+placeholder_text = " clique aq"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 119.0
+margin_right = 1323.0
+margin_bottom = 229.0
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 1000.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 1000, 110 )
+bbcode_enabled = true
+bbcode_text = "[wave]ocupação:"
+text = "ocupação:"
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 1004.0
+margin_right = 1323.0
+margin_bottom = 110.0
+text = " MUDAR "
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 249.0
+margin_right = 1323.0
+margin_bottom = 348.0
+bbcode_enabled = true
+bbcode_text = "[wave]pontuação máxima:"
+text = "pontuação máxima:"
+fit_content_height = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 368.0
+margin_right = 1323.0
+margin_bottom = 543.0
+rect_min_size = Vector2( 0, 175 )
+text = "
+
+
+
+
+"
+scroll_active = false
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/RichTextLabel2"]
+margin_left = 6.0
+margin_top = 18.0
+margin_right = 1300.0
+margin_bottom = 149.0
+text = "mudar cor do app"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 563.0
+margin_right = 1323.0
+margin_bottom = 738.0
+rect_min_size = Vector2( 0, 175 )
+text = "
+
+
+
+
+"
+scroll_active = false
+
+[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer/RichTextLabel6"]
+margin_left = 6.0
+margin_top = 18.0
+margin_right = 1300.0
+margin_bottom = 149.0
+text = "ativar tela cheia"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 758.0
+margin_right = 1323.0
+margin_bottom = 908.0
+custom_constants/separation = 25
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 641.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+text = " ver no github "
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 666.0
+margin_right = 1297.0
+margin_bottom = 150.0
+text = "ver instagram"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+visible = false
+margin_top = 733.0
+margin_right = 1368.0
+margin_bottom = 748.0
+rect_min_size = Vector2( 0, 15 )
+scroll_active = false
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 928.0
+margin_right = 1323.0
+margin_bottom = 1078.0
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 1300.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 1300, 150 )
+custom_colors/font_color = Color( 0.32549, 0.101961, 0.101961, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "deletar"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1098.0
+margin_right = 1323.0
+margin_bottom = 1113.0
+rect_min_size = Vector2( 0, 15 )
+scroll_active = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -75,6 +208,14 @@ margin_right = 110.0
 margin_bottom = -448.0
 texture = ExtResource( 2 )
 
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect"]
+show_behind_parent = true
+margin_left = -8.0
+margin_top = -13.0
+margin_right = 248.0
+margin_bottom = 244.0
+custom_styles/panel = SubResource( 2 )
+
 [node name="Button" type="Button" parent="."]
 margin_left = 14.0
 margin_top = 12.0
@@ -82,49 +223,10 @@ margin_right = 144.0
 margin_bottom = 119.0
 text = " X "
 
-[node name="Button2" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 86.0
-margin_top = 116.0
-margin_right = 405.0
-margin_bottom = 226.0
-text = " MUDAR "
-
-[node name="Button3" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -399.0
-margin_top = -98.0
-custom_colors/font_color = Color( 0.32549, 0.101961, 0.101961, 1 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-text = "deletar"
-
-[node name="Button4" type="Button" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -641.0
-margin_bottom = 98.0
-text = " ver no github "
-
-[node name="Button5" type="Button" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_top = -196.0
-margin_right = 759.0
-text = "mudar cor
-(caso daltônico)"
-
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel2/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel6/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]

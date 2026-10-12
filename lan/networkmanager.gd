@@ -3,6 +3,7 @@ extends Node
 const DEFAULT_PORT = 8910
 var peer = null
 var current_lecture = {}
+var rand = false
 
 signal lecture_received
 
@@ -50,10 +51,11 @@ func join_classroom(ip_address):
 func _on_peer_connected(id):
 	if get_tree().is_network_server() and not current_lecture.empty():
 		rpc_id(id, "receive_lecture", current_lecture)
+		rpc_id(id, "modifiers", rand)
 
 func get_classroom_ip() -> String:
 	if OS.has_feature("JavaScript"):
-		return "Run on Desktop to Host"
+		return "Baixe o app para criar uma sala"
 		
 	var addresses = IP.get_local_addresses()
 	for ip in addresses:
@@ -66,7 +68,7 @@ func get_classroom_ip() -> String:
 		if not ":" in ip and ip != "127.0.0.1":
 			return ip
 			
-	return "No LAN Connection"
+	return "sem conexão :("
 
 func send_lecture_to_students(lecture_data):
 	current_lecture = lecture_data
@@ -77,3 +79,6 @@ remotesync func receive_lecture(lecture_data):
 	current_lecture = lecture_data
 	Save.lectures = lecture_data
 	emit_signal("lecture_received")
+
+remotesync func modifiers(modifiers):
+	PlayerVars.player_data["reversed"] = modifiers

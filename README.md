@@ -2,6 +2,8 @@
 
 > Projeto Open Source de apoio à alfabetização e diagnóstico de aprendizagem para alunos do 1º ao 3º ano do Ensino Fundamental.
 
+Site já disponível em: https://abcsimplesbrrs.github.io/ABC-Simples-BR-RS/
+
 ---
 
 ## Sobre o Projeto

@@ -1,6 +1,9 @@
 extends Control
 
+signal task_completed
+
 func _ready():
+	self.connect("task_completed", get_parent(), "load_next_task")
 	randomize()
 	roll()
 

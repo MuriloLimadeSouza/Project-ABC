@@ -6,6 +6,7 @@ const SUBJECT_SCENES = {
 	"conversion": "res://actividades/math/Math.tscn",
 	"times": "res://actividades/math/Math.tscn",
 	"problems": "res://actividades/math/Math.tscn",
+	"time": "res://actividades/time/time.tscn",
 	
 	"division_in_equal_parts": "res://actividades/sorting/division_in_equal_parts.tscn",
 	"spacial_geometry": "res://actividades/geometry/geometry.tscn",
@@ -47,7 +48,9 @@ func generate_playlist(lecture_data):
 			playlist.append(subject)
 			
 
-	# Optional: playlist.shuffle() if you want mixed order
+	if PlayerVars.player_data["reversed"] == true:
+		playlist.shuffle()
+
 func load_next_task():
 	if is_instance_valid(current_scene_node):
 		current_scene_node.queue_free()

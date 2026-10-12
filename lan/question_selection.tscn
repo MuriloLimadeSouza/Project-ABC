@@ -138,6 +138,7 @@ tracks/3/keys = {
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.117647, 0.341176, 0.611765, 1 )
 corner_radius_top_left = 88
+corner_radius_top_right = 88
 corner_radius_bottom_right = 88
 corner_radius_bottom_left = 88
 
@@ -177,7 +178,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Matemática" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 108.0
@@ -193,7 +193,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Matemática/ScrollContainer"]
 margin_right = 1226.0
-margin_bottom = 2228.0
+margin_bottom = 2496.0
 custom_constants/separation = 35
 alignment = 1
 
@@ -379,10 +379,43 @@ placeholder_text = "0"
 caret_blink = true
 script = ExtResource( 4 )
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer10" type="HBoxContainer" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
 margin_top = 1101.0
 margin_right = 1226.0
-margin_bottom = 1398.0
+margin_bottom = 1200.0
+alignment = 1
+
+[node name="Label6" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer10"]
+margin_left = 5.0
+margin_right = 1105.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 1100, 0 )
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[center][wave]medição de tempo:"
+text = "medição de tempo:"
+fit_content_height = true
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer10"]
+margin_left = 1109.0
+margin_right = 1220.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 111, 0 )
+custom_constants/minimum_spaces = 1
+align = 1
+max_length = 2
+expand_to_text_length = true
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+placeholder_text = "0"
+caret_blink = true
+script = ExtResource( 4 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
+margin_top = 1235.0
+margin_right = 1226.0
+margin_bottom = 1532.0
 custom_colors/default_color = Color( 1, 1, 1, 0.94902 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -429,9 +462,9 @@ caret_blink = true
 script = ExtResource( 4 )
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
-margin_top = 1433.0
+margin_top = 1567.0
 margin_right = 1226.0
-margin_bottom = 1532.0
+margin_bottom = 1666.0
 alignment = 1
 
 [node name="Label6" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer7"]
@@ -462,9 +495,9 @@ caret_blink = true
 script = ExtResource( 4 )
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
-margin_top = 1567.0
+margin_top = 1701.0
 margin_right = 1226.0
-margin_bottom = 1765.0
+margin_bottom = 1899.0
 alignment = 1
 
 [node name="Label6" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer8"]
@@ -495,9 +528,9 @@ caret_blink = true
 script = ExtResource( 4 )
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
-margin_top = 1800.0
+margin_top = 1934.0
 margin_right = 1226.0
-margin_bottom = 1899.0
+margin_bottom = 2033.0
 alignment = 1
 
 [node name="Label6" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer9"]
@@ -527,15 +560,49 @@ placeholder_text = "0"
 caret_blink = true
 script = ExtResource( 4 )
 
-[node name="Button" type="Button" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
-margin_top = 1934.0
+[node name="HBoxContainer11" type="HBoxContainer" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
+margin_top = 2068.0
 margin_right = 1226.0
-margin_bottom = 2228.0
+margin_bottom = 2167.0
+alignment = 1
+
+[node name="Label6" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer11"]
+margin_left = 5.0
+margin_right = 1105.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 1100, 0 )
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[center][wave]divisão em partes iguais:"
+text = "divisão em partes iguais:"
+fit_content_height = true
+
+[node name="LineEdit" type="LineEdit" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer/HBoxContainer11"]
+margin_left = 1109.0
+margin_right = 1220.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 111, 0 )
+custom_constants/minimum_spaces = 1
+align = 1
+max_length = 2
+expand_to_text_length = true
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+placeholder_text = "0"
+caret_blink = true
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
+margin_top = 2202.0
+margin_right = 1226.0
+margin_bottom = 2496.0
 text = "
 criar
 "
 
 [node name="português" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 108.0
@@ -975,6 +1042,45 @@ text = "
 criar
 "
 
+[node name="modificadores" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 108.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/modificadores"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -448.5
+margin_top = -659.5
+margin_right = 448.5
+margin_bottom = 659.5
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/modificadores/VBoxContainer"]
+margin_right = 897.0
+margin_bottom = 99.0
+fit_content_height = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/modificadores/VBoxContainer"]
+margin_top = 103.0
+margin_right = 897.0
+margin_bottom = 603.0
+rect_min_size = Vector2( 0, 500 )
+bbcode_enabled = true
+bbcode_text = "[wave][center]ordem aleatória:"
+text = "ordem aleatória:"
+
+[node name="Button4" type="Button" parent="TabContainer/modificadores/VBoxContainer/RichTextLabel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -197.0
+margin_top = 233.0
+margin_right = 173.0
+margin_bottom = 357.0
+text = " não"
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
@@ -1001,4 +1107,5 @@ text = " X "
 
 [connection signal="pressed" from="TabContainer/Matemática/ScrollContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TabContainer/português/ScrollContainer2/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TabContainer/modificadores/VBoxContainer/RichTextLabel/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_Go_Back_pressed"]

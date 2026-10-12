@@ -10,12 +10,7 @@ export var amount_of_numbers = 3
 
 func _ready():
 	randomize() 
-
 	roll()
-	#if problem_type == types.problems or problem_type == types.conversion:
-		#$Label.rect_position.y = 50
-		
-	#temp solution:
 
 
 func roll():

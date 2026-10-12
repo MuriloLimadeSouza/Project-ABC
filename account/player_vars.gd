@@ -2,8 +2,6 @@ extends Node
 
 #this is the player save btw, not the singleton "Save", it is this script that saves player name, points, occupation, etc.
 
-
-
 var save_path = "user://player_data.json"
 
 var player_data = {
@@ -11,7 +9,8 @@ var player_data = {
 	"player_name": "",
 	"max_points": 0,
 	"teacher": false,
-	"colorblind": false
+	"number": 0,
+	"reversed": false
 }
 
 func _ready():
