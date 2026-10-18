@@ -12,7 +12,7 @@ O ABC Simples é uma ferramenta pedagógica desenvolvida por alunos do 9º ano c
 
 A plataforma utiliza gamificação (desafios, pontuação e recompensas) para reforçar conteúdos de leitura, escrita e lógica matemática alinhados à Base Nacional Comum Curricular (BNCC), além de auxiliar professores no diagnóstico de defasagens apontadas por avaliações como as do CAEd.
 
-### Principais Destaques
+### Destaques
 
 - **Acessibilidade para Alunos:** Interface intuitiva e visual para crianças em fase de alfabetização.
 - **Inclusão Digital para Educadores:** Navegação simples para professores com pouca familiaridade técnica.
@@ -51,8 +51,6 @@ A plataforma utiliza gamificação (desafios, pontuação e recompensas) para re
 ## Autores
 
 Desenvolvido por Davi e Murilo, estudantes do 9º ano do Ensino Fundamental.
-
-> "Transformando a tecnologia do cotidiano das crianças em uma ferramenta interativa de aprendizagem desde o 6º ano."
 
 ---
 
