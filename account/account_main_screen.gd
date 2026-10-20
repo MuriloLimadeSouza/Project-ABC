@@ -32,17 +32,11 @@ func _on_Button3_pressed():
 	get_tree().quit()
 
 func _on_Button2_pressed():
-	# 1. Sinaliza no Save que a partida atual é Solo
 	Save.solo_run = 1
-	
-	# 2. Reseta o dicionário de erros para a nova partida
 	Save.mistakes.clear()
 	
-	# 3. Limpa o Lan para não ter conflito com conexões de rede
 	Lan.current_lecture.clear()
 	
-	# 4. Define quantas questões de CADA matéria o aluno fará no Modo Solo
-	# (Altere o '1' para '2' ou '3' se quiser mais questões por matéria)
 	var QUESTIONS_PER_SUBJECT = 1
 	
 	var solo_lecture = {}

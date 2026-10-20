@@ -53,7 +53,7 @@ margin_bottom = 716.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 1323.0
-margin_bottom = 1113.0
+margin_bottom = 1343.0
 rect_clip_content = true
 custom_constants/separation = 20
 alignment = 1
@@ -127,10 +127,30 @@ margin_right = 1300.0
 margin_bottom = 149.0
 text = "mudar cor do app"
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+[node name="RichTextLabel7" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
 margin_top = 563.0
 margin_right = 1323.0
 margin_bottom = 738.0
+rect_min_size = Vector2( 0, 175 )
+text = "
+
+
+
+
+"
+scroll_active = false
+
+[node name="Contrast" type="Button" parent="ScrollContainer/VBoxContainer/RichTextLabel7"]
+margin_left = 6.0
+margin_top = 18.0
+margin_right = 1300.0
+margin_bottom = 149.0
+text = "ativar alto contraste"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 758.0
+margin_right = 1323.0
+margin_bottom = 933.0
 rect_min_size = Vector2( 0, 175 )
 text = "
 
@@ -148,9 +168,9 @@ margin_bottom = 149.0
 text = "ativar tela cheia"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-margin_top = 758.0
+margin_top = 953.0
 margin_right = 1323.0
-margin_bottom = 908.0
+margin_bottom = 1103.0
 custom_constants/separation = 25
 
 [node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -166,17 +186,18 @@ margin_bottom = 150.0
 text = "ver instagram"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-visible = false
-margin_top = 733.0
-margin_right = 1368.0
-margin_bottom = 748.0
+margin_top = 1123.0
+margin_right = 1323.0
+margin_bottom = 1138.0
 rect_min_size = Vector2( 0, 15 )
+text = "
+"
 scroll_active = false
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-margin_top = 928.0
+margin_top = 1158.0
 margin_right = 1323.0
-margin_bottom = 1078.0
+margin_bottom = 1308.0
 
 [node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
 margin_right = 1300.0
@@ -191,9 +212,9 @@ custom_styles/normal = SubResource( 1 )
 text = "deletar"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 1098.0
+margin_top = 1328.0
 margin_right = 1323.0
-margin_bottom = 1113.0
+margin_bottom = 1343.0
 rect_min_size = Vector2( 0, 15 )
 scroll_active = false
 
@@ -216,6 +237,21 @@ margin_right = 248.0
 margin_bottom = 244.0
 custom_styles/panel = SubResource( 2 )
 
+[node name="FileDialog" type="FileDialog" parent="TextureRect"]
+margin_right = 1447.0
+margin_bottom = 444.0
+window_title = "Abrir um Arquivo"
+resizable = true
+dialog_text = "Selecione uma foto de perfil:"
+dialog_autowrap = true
+mode = 0
+access = 2
+
+[node name="selectfile" type="Button" parent="TextureRect"]
+margin_right = 250.0
+margin_bottom = 233.0
+flat = true
+
 [node name="Button" type="Button" parent="."]
 margin_left = 14.0
 margin_top = 12.0
@@ -225,8 +261,11 @@ text = " X "
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel2/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel7/Contrast" to="." method="_on_Contrast_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel6/Button9" to="." method="_on_Button9_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button6" to="." method="_on_Button6_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="file_selected" from="TextureRect/FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="pressed" from="TextureRect/selectfile" to="." method="_on_selectfile_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

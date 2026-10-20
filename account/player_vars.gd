@@ -9,6 +9,7 @@ var player_data = {
 	"player_name": "",
 	"max_points": 0,
 	"teacher": false,
+	"contrast":false,
 	"number": 0,
 	"reversed": false
 }

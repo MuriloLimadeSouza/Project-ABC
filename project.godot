@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="EDU Simples"
+config/name="ABC Simples"
 config/description="Programa designado para ajudar professores dos anos iniciais."
 run/main_scene="res://lan/inicial_screen.tscn"
 boot_splash/show_image=false

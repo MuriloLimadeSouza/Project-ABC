@@ -7,12 +7,19 @@ func _ready():
 	
 	match PlayerVars.player_data["teacher"]:
 		true:
-			occupation = "Professor"
+			occupation = " Professor"
 		false:
-			occupation = "Aluno"
+			occupation = " Aluno"
 	
 	$ScrollContainer/VBoxContainer/HBoxContainer2/RichTextLabel4.bbcode_text = "[wave]Ocupação:" + str(occupation)
 	$ScrollContainer/VBoxContainer/RichTextLabel5.bbcode_text = "Pontuação Máxima:" + "[rainbow] " + str(PlayerVars.player_data["max_points"])
+	
+	if PlayerVars.player_data["contrast"] == false:
+		contrast_text.invert()
+	if OS.window_fullscreen == false:
+		texts.invert()
+	$ScrollContainer/VBoxContainer/RichTextLabel6/Button9.text = texts[1]
+	$ScrollContainer/VBoxContainer/RichTextLabel7/Contrast.text = contrast_text[1]
 
 func _on_Button_pressed():
 	PlayerVars.player_data["player_name"] = $ScrollContainer/VBoxContainer/HBoxContainer/LineEdit.text
@@ -36,6 +43,7 @@ func _on_Button3_pressed():
 	"player_name": "",
 	"max_points": 0,
 	"teacher": false,
+	"contrast": false,
 	"number": 1,
 	"reversed": false
 }
@@ -68,3 +76,18 @@ func _on_Button9_pressed():
 		OS.window_fullscreen = true
 	else:
 		OS.window_fullscreen = false
+
+func _on_selectfile_pressed():
+	$TextureRect/FileDialog.popup_centered()
+
+var contrast_text = ["ativar alto contraste", "desativar alto contraste"]
+
+func _on_Contrast_pressed():
+	contrast_text.invert()
+	$ScrollContainer/VBoxContainer/RichTextLabel7/Contrast.text = contrast_text[1]
+	if contrast_text[1] == "desativar alto contraste":
+		PlayerVars.player_data["contrast"] = true
+	else:
+		PlayerVars.player_data["contrast"] = false
+	PlayerVars.save_game_data()
+	get_tree().change_scene("res://account/settings.tscn")

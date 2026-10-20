@@ -155,16 +155,6 @@ autoplay = "FDE IN"
 anims/RESET = SubResource( 1 )
 "anims/fade out" = SubResource( 2 )
 
-[node name="Control" parent="." instance=ExtResource( 5 )]
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-margin_left = -454.0
-margin_top = -4.0
-margin_right = 446.0
-margin_bottom = 1436.0
-
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color( 1, 1, 1, 0.588235 )
 anchor_top = 0.097
@@ -173,9 +163,21 @@ anchor_bottom = 1.0
 margin_top = -31.68
 custom_styles/panel = SubResource( 4 )
 
+[node name="Control" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -450.0
+margin_top = -666.0
+margin_right = 450.0
+margin_bottom = 666.0
+
 [node name="TabContainer" type="TabContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+drag_to_rearrange_enabled = true
 
 [node name="Matemática" type="Tabs" parent="TabContainer"]
 anchor_right = 1.0
@@ -1069,8 +1071,8 @@ margin_right = 897.0
 margin_bottom = 603.0
 rect_min_size = Vector2( 0, 500 )
 bbcode_enabled = true
-bbcode_text = "[wave][center]ordem aleatória:"
-text = "ordem aleatória:"
+bbcode_text = "[wave][center]ordem reversa:"
+text = "ordem reversa:"
 
 [node name="Button4" type="Button" parent="TabContainer/modificadores/VBoxContainer/RichTextLabel"]
 anchor_left = 0.5
@@ -1101,8 +1103,8 @@ fit_content_height = true
 [node name="Go Back" type="Button" parent="."]
 margin_left = 3.0
 margin_top = 4.0
-margin_right = 93.0
-margin_bottom = 102.0
+margin_right = 124.0
+margin_bottom = 121.0
 text = " X "
 
 [connection signal="pressed" from="TabContainer/Matemática/ScrollContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

@@ -64,14 +64,12 @@ func _on_Button_pressed():
 		Save.lectures = lecture_data
 	Lan.current_lecture = lecture_data
 	
-	# 3. Abre o servidor de rede. 
-	# A partir DESTE MOMENTO, qualquer aluno que conectar vai disparar 
-	# o '_on_peer_connected' no Lan e receber essa 'current_lecture' na hora!
 	Lan.host_classroom()
 	
 	# 4. Efeitos visuais da tela do professor
 	$AnimationPlayer.play("fade out")
 	$RichTextLabel2.bbcode_text = "[center][wave]seu código é: [/wave][tornado]" + Lan.get_classroom_ip() + "[/tornado][/center]"
+	$Control.raise()
 
 func _on_Go_Back_pressed():
 	get_tree().change_scene("res://account/account_main_scene.tscn")
