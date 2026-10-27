@@ -50,7 +50,7 @@ anchor_bottom = 0.5
 margin_left = -263.5
 margin_top = -697.0
 margin_right = 271.5
-margin_bottom = -439.0
+margin_bottom = -439.5
 custom_styles/panel = SubResource( 6 )
 
 [node name="Button" type="Button" parent="."]

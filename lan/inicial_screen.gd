@@ -3,6 +3,10 @@ extends Control
 var RESOLUTIONS = [Vector2(1300, 720)]
 
 func _ready():
+	if OS.has_feature("HTML5"):
+		PlayerVars.player_data["contrast"] = false
+		PlayerVars.player_data["number"] = 0
+		PlayerVars.save_game_data()
 	Inputs.cycle_resolution(-1)
 	#Inputs.cycle_resolution(1)
 

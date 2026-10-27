@@ -27,7 +27,8 @@ onready var substantivos =$"TabContainer/português/ScrollContainer2/VBoxContain
 onready var analise_ling =$"TabContainer/português/ScrollContainer2/VBoxContainer/HBoxContainer18/LineEdit"
 
 func _on_Button_pressed():
-	Lan.host_classroom()
+	if not OS.has_feature("HTML5"):
+		Lan.host_classroom()
 	
 	var lecture_data = {
 		"Addition and subtraction": int(addition_subtraction_input.text),
@@ -64,7 +65,9 @@ func _on_Button_pressed():
 		Save.lectures = lecture_data
 	Lan.current_lecture = lecture_data
 	
-	Lan.host_classroom()
+	
+	if not OS.has_feature("HTML5"):
+		Lan.host_classroom()
 	
 	# 4. Efeitos visuais da tela do professor
 	$AnimationPlayer.play("fade out")

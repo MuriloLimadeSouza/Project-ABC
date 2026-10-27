@@ -55,8 +55,9 @@ func _ready():
 		
 		if mistake_count > 0:
 			label_node.show()
-			label_node.bbcode_text += " [color=red](Erros: " + str(mistake_count) + ")[/color]"
-			
+			label_node.bbcode_text += "[color=red](Erros: " + str(mistake_count) + ")[/color]"
+			if subject in portuguese_subjects:
+				label_node.bbcode_text += "\n"
 			# Se a matéria atual for de Português, soma na contagem específica
 			if subject in portuguese_subjects:
 				erros_portugues += mistake_count
@@ -70,7 +71,7 @@ func _ready():
 	else:
 		label_portugues.show()
 
-	_exportar_relatorio_erros()
+	#_exportar_relatorio_erros()
 
 func _exportar_relatorio_erros():
 	var player_name = PlayerVars.player_data.get("player_name", "Aluno")

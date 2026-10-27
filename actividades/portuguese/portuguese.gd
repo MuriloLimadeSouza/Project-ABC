@@ -233,27 +233,27 @@ func _obter_banco_questoes() -> Dictionary:
 	
 
 	banco[types.acentos] = [
-		{"pergunta": "Qual palavra precisa do acento circunflexo?", "correta": "Vovô", "alternativas": ["Vovô", "Café", "Pé", "Água"]},
-		{"pergunta": "Qual palavra usa o acento agudo na letra A?", "correta": "Água", "alternativas": ["Água", "Cama", "Mala", "Casa"]},
+		{"pergunta": "Qual palavra precisa do acento circunflexo?", "correta": "Vovo", "alternativas": ["Vovo", "Cafe", "Pe", "agua"]},
+		{"pergunta": "Qual palavra usa o acento agudo na letra A?", "correta": "agua", "alternativas": ["agua", "cama", "mala", "casa"]},
 		{"pergunta": "Qual palavra tem o som do 'vovó' (aberto, com acento agudo)?", "correta": "Café", "alternativas": ["Café", "Você", "Bênção", "Ônibus"]},
 		{"pergunta": "O sinal do tio serve para deixar o som:", "correta": "Nasal (pelo nariz)", "alternativas": ["Nasal (pelo nariz)", "Muito forte", "Fraco", "Mudo"]},
-		{"pergunta": "Qual palavra precisa do acento do tio?", "correta": "Avião", "alternativas": ["Avião", "Bola", "Dado", "Pato"]},
-		{"pergunta": "Qual palavra usa o acento circunflexo na letra O?", "correta": "Ônibus", "alternativas": ["Ônibus", "Óculos", "Copo", "Porta"]},
-		{"pergunta": "Qual palavra precisa de acento agudo?", "correta": "Picolé", "alternativas": ["Picolé", "Menino", "Mesa", "Caderno"]},
-		{"pergunta": "Qual é o acento da palavra 'VOCÊ'?", "correta": "Circunflexo", "alternativas": ["Circunflexo", "Agudo", "Tio", "Nenhum"]},
-		{"pergunta": "Qual palavra tem o sinal do Tio?", "correta": "Maçã", "alternativas": ["Maçã", "Pé", "Vovô", "Gato"]},
-		{"pergunta": "Qual palavra precisa de acento na letra U?", "correta": "Baú", "alternativas": ["Baú", "Uva", "Urubu", "Um"]},
+		{"pergunta": "Qual palavra precisa do acento do tio?", "correta": "Aviao", "alternativas": ["Aviao", "Bola", "Dado", "Pato"]},
+		{"pergunta": "Qual palavra usa o acento circunflexo na letra O?", "correta": "onibus", "alternativas": ["onibus", "oculos", "Copo", "Porta"]},
+		{"pergunta": "Qual palavra precisa de acento agudo?", "correta": "Picole", "alternativas": ["Picole", "Menino", "Mesa", "Caderno"]},
+		{"pergunta": "Qual é o acento da palavra 'VOCe'?", "correta": "Circunflexo", "alternativas": ["Circunflexo", "Agudo", "Tio", "Nenhum"]},
+		{"pergunta": "Qual palavra tem o sinal do Tio?", "correta": "Maça", "alternativas": ["Maça", "Pe", "Vovo", "Gato"]},
+		{"pergunta": "Qual palavra precisa de acento na letra U?", "correta": "Bau", "alternativas": ["Bau", "Uva", "Urubu", "Um"]},
 		{"pergunta": "O acento agudo deixa o som da vogal:", "correta": "Aberto", "alternativas": ["Aberto", "Fechado", "Nasal", "Sumiu"]},
 		{"pergunta": "O acento circunflexo deixa o som da vogal:", "correta": "Fechado", "alternativas": ["Fechado", "Aberto", "Longo", "Mudo"]},
 		{"pergunta": "Qual palavra está acentuada CORRETAMENTE?", "correta": "Árvore", "alternativas": ["Árvore", "Arvorê", "Arvôre", "Arvore"]},
-		{"pergunta": "Qual palavra precisa de acento agudo na letra O?", "correta": "Óculos", "alternativas": ["Óculos", "Vovô", "Bolo", "Ovo"]},
-		{"pergunta": "Qual palavra tem o acento do tio?", "correta": "Sabão", "alternativas": ["Sabão", "Sopa", "Sapato", "Sino"]},
-		{"pergunta": "Qual palavra precisa de acento na letra E?", "correta": "Jacaré", "alternativas": ["Jacaré", "Escola", "Estojo", "Elefante"]},
-		{"pergunta": "Qual palavra usa o acento circunflexo?", "correta": "Três", "alternativas": ["Três", "Pé", "Chá", "Lá"]},
-		{"pergunta": "Qual palavra leva acento agudo na letra A?", "correta": "Lápis", "alternativas": ["Lápis", "Livro", "Igreja", "Ilha"]},
+		{"pergunta": "Qual palavra precisa de acento agudo na letra O?", "correta": "oculos", "alternativas": ["oculos", "Vovo", "Bolo", "Ovo"]},
+		{"pergunta": "Qual palavra tem o acento do tio?", "correta": "Sabao", "alternativas": ["Sabao", "Sopa", "Sapato", "Sino"]},
+		{"pergunta": "Qual palavra precisa de acento na letra E?", "correta": "Jacare", "alternativas": ["Jacare", "Escola", "Estojo", "Elefante"]},
+		{"pergunta": "Qual palavra usa o acento circunflexo?", "correta": "Tres", "alternativas": ["Tres", "Pe", "Cha", "La"]},
+		{"pergunta": "Qual palavra leva acento agudo na letra A?", "correta": "Lapis", "alternativas": ["Lapis", "Livro", "Igreja", "Ilha"]},
 		{"pergunta": "Qual o acento correto para a palavra 'PÁSSARO'?", "correta": "Agudo", "alternativas": ["Agudo", "Circunflexo", "Tio", "Nenhum"]},
-		{"pergunta": "Qual palavra NÃO tem nenhum acento?", "correta": "Copo", "alternativas": ["Copo", "Café", "Vovô", "Maçã"]},
-		{"pergunta": "Qual palavra precisa do tio no A?", "correta": "Mão", "alternativas": ["Mão", "Mala", "Mapa", "Mesa"]}
+		{"pergunta": "Qual palavra NÃO tem nenhum acento?", "correta": "Copo", "alternativas": ["Copo", "Cafe", "Vovo", "Maça"]},
+		{"pergunta": "Qual palavra precisa do tio no A?", "correta": "Mao", "alternativas": ["Mao", "Mala", "Mapa", "Mesa"]}
 	]
 
 	banco[types.singular_plural] = [

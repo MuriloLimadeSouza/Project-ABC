@@ -196,6 +196,8 @@ func roll():
 			label_node.text = str(resultado_final + (randi() % 21) - 10)
 		var selected_to_be_right = labels[randi() % labels.size()]
 		selected_to_be_right.text = str(resultado_final)
+		
+	buttons_unique_fix(str(resultado_final))
 
 func check_if_correct(label):
 	var is_correct = false
@@ -238,3 +240,29 @@ func _on_Button_pressed(): check_if_correct($Button)
 func _on_Button2_pressed(): check_if_correct($Button2)
 func _on_Button3_pressed(): check_if_correct($Button3)
 func _on_Button4_pressed(): check_if_correct($Button4)
+
+func buttons_unique_fix(texto_correto: String):
+	var botoes = [$Button, $Button2, $Button3, $Button4]
+	var valores = [texto_correto]
+	
+	while valores.size() < botoes.size():
+		var valor_falso = ""
+		
+		if problem_type == types.times:
+			var valor_base = int(resultado_final) / amount_of_numbers
+			var fake_multiplier = amount_of_numbers + (randi() % 5) - 2
+			if fake_multiplier == amount_of_numbers or fake_multiplier <= 0:
+				fake_multiplier = amount_of_numbers + 1
+			valor_falso = str(valor_base) + "x" + str(fake_multiplier)
+		else:
+			valor_falso = str(resultado_final + (randi() % 21) - 10)
+			
+		if not valor_falso in valores:
+			valores.append(valor_falso)
+			
+	valores.shuffle()
+	
+	$Button.text = valores[0]
+	$Button2.text = valores[1]
+	$Button3.text = valores[2]
+	$Button4.text = valores[3]
