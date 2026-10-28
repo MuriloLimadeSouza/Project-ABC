@@ -53,7 +53,7 @@ margin_bottom = 716.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 1323.0
-margin_bottom = 1343.0
+margin_bottom = 1875.0
 rect_clip_content = true
 custom_constants/separation = 20
 alignment = 1
@@ -167,10 +167,36 @@ margin_right = 1300.0
 margin_bottom = 149.0
 text = "ativar tela cheia"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
 margin_top = 953.0
 margin_right = 1323.0
 margin_bottom = 1103.0
+rect_min_size = Vector2( 1300, 150 )
+custom_colors/font_color = Color( 0.32549, 0.101961, 0.101961, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "deletar"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1123.0
+margin_right = 1323.0
+margin_bottom = 1420.0
+bbcode_enabled = true
+bbcode_text = "
+[center][rainbow][wave]links do abc simples:
+"
+text = "
+links do abc simples:
+"
+fit_content_height = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1440.0
+margin_right = 1323.0
+margin_bottom = 1590.0
 custom_constants/separation = 25
 
 [node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -185,36 +211,44 @@ margin_right = 1297.0
 margin_bottom = 150.0
 text = "ver instagram"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 1123.0
+[node name="RichTextLabel8" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1610.0
 margin_right = 1323.0
-margin_bottom = 1138.0
+margin_bottom = 1785.0
+rect_min_size = Vector2( 0, 175 )
+text = "
+
+
+
+
+"
+scroll_active = false
+
+[node name="Itch" type="Button" parent="ScrollContainer/VBoxContainer/RichTextLabel8"]
+margin_left = 6.0
+margin_top = 18.0
+margin_right = 1300.0
+margin_bottom = 149.0
+text = "ir para itch.io"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1805.0
+margin_right = 1323.0
+margin_bottom = 1820.0
 rect_min_size = Vector2( 0, 15 )
 text = "
 "
 scroll_active = false
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-margin_top = 1158.0
+margin_top = 1840.0
 margin_right = 1323.0
-margin_bottom = 1308.0
-
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
-margin_right = 1300.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 1300, 150 )
-custom_colors/font_color = Color( 0.32549, 0.101961, 0.101961, 1 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/focus = SubResource( 1 )
-custom_styles/disabled = SubResource( 1 )
-custom_styles/normal = SubResource( 1 )
-text = "deletar"
+margin_bottom = 1840.0
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-margin_top = 1328.0
+margin_top = 1860.0
 margin_right = 1323.0
-margin_bottom = 1343.0
+margin_bottom = 1875.0
 rect_min_size = Vector2( 0, 15 )
 scroll_active = false
 
@@ -263,9 +297,10 @@ text = " X "
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel2/Button5" to="." method="_on_Button5_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel7/Contrast" to="." method="_on_Contrast_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel6/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button4" to="." method="_on_Button4_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer3/Button6" to="." method="_on_Button6_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/HBoxContainer4/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/RichTextLabel8/Itch" to="." method="_on_Itch_pressed"]
 [connection signal="file_selected" from="TextureRect/FileDialog" to="." method="_on_FileDialog_file_selected"]
 [connection signal="pressed" from="TextureRect/selectfile" to="." method="_on_selectfile_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

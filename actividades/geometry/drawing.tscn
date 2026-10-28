@@ -4,6 +4,7 @@
 [ext_resource path="res://scrolling_background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://points.tscn" type="PackedScene" id=3]
 
+
 [node name="Control" type="Control"]
 anchor_left = 0.5
 anchor_right = 0.5

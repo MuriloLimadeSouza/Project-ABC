@@ -31,12 +31,6 @@ func _on_Button_pressed():
 		false:
 			get_tree().change_scene("res://lan/puppet_screen.tscn")
 
-func _on_TextureButton2_pressed():
-	if OS.has_feature("HTML5"):
-		JavaScript.eval("window.open('https://abc-simples-br.itch.io/abc-simples-br')")
-	else:
-		OS.shell_open("https://abc-simples-br.itch.io/abc-simples-br")
-
 func _on_Button3_pressed():
 	get_tree().quit()
 
@@ -83,3 +77,9 @@ const ALL_SUBJECTS = [
 	"substantivos",
 	"analise_ling"
 ]
+
+func _on_TextureButton_mouse_entered():
+	$TextureButton.modulate = Color.darkcyan
+
+func _on_TextureButton_mouse_exited():
+	$TextureButton.modulate = Color.white

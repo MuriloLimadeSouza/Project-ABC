@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scrolling_background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/WhiteLearn/the_people.webp" type="Texture" id=2]
 [ext_resource path="res://account/account_main_screen.gd" type="Script" id=3]
-[ext_resource path="res://Assets/itch logo.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.117647, 0.341176, 0.611765, 1 )
@@ -139,17 +138,6 @@ custom_colors/font_color = Color( 0, 0.596078, 0.858824, 1 )
 text = "inicie uma atividade
  sem um professor!"
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-modulate = Color( 0, 0.596078, 0.858824, 1 )
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -428.0
-margin_top = 28.0
-margin_right = -128.0
-margin_bottom = 328.0
-rect_scale = Vector2( 0.6, 0.6 )
-texture_normal = ExtResource( 4 )
-
 [node name="Button3" type="Button" parent="."]
 margin_left = 11.0
 margin_top = 46.0
@@ -196,7 +184,8 @@ text = "clique o botão do mouse direito sobre um texto para ouvir!"
 fit_content_height = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_TextureButton_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

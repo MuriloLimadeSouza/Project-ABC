@@ -1,11 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://base_font_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/base_font_theme.tres" type="Theme" id=1]
 [ext_resource path="res://actividades/sorting/points_manager.gd" type="Script" id=2]
 [ext_resource path="res://spawner_of_draggables.gd" type="Script" id=3]
 [ext_resource path="res://actividades/sorting/collision_code.gd" type="Script" id=4]
 [ext_resource path="res://scrolling_background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://points.tscn" type="PackedScene" id=6]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 225.5, 113.5 )

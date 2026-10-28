@@ -8,6 +8,10 @@ var problem_type = types.problems
 
 export var amount_of_numbers = 3 
 
+# Variáveis auxiliares para o modo times
+var times_base_number = 0
+var times_amount = 0
+
 func _ready():
 	randomize() 
 	roll()
@@ -21,7 +25,7 @@ func roll():
 	var labels = [label1, label2, label3, label4]
 
 	# ==========================================
-	# NOVO MODO: MEDIDAS E GRANDEZAS
+	# MODO: MEDIDAS E GRANDEZAS
 	# ==========================================
 	if problem_type == types.conversion:
 		var regras = [
@@ -50,7 +54,10 @@ func roll():
 		selected_to_be_right.text = str(resultado_final)
 		return
 
-	if problem_type == types.problems:
+	# ==========================================
+	# MODO: PROBLEMINHAS
+	# ==========================================
+	elif problem_type == types.problems:
 		var problems = [
 			{"text": "Ana tinha %s moedas e perdeu %s. Quantas sobraram?", "op": "-"},
 			{"text": "João tinha %s balas e ganhou %s. Quantas tem agora?", "op": "+"},
@@ -118,9 +125,19 @@ func roll():
 			resultado_final = n1 - n2
 
 		$Panel/Label.bbcode_text = "[wave][center]" + choice["text"] % [str(n1), str(n2)]
+		buttons_unique_fix(str(resultado_final))
+
+	# ==========================================
+	# MODO: SOMA REPETIDA (TIMES)
+	# ==========================================
 	elif problem_type == types.times:
 		var repeated_number = (randi() % 10) + 1
-		resultado_final = repeated_number * amount_of_numbers 
+		
+		# Salvamos nas variáveis globais para usar com segurança nos botões
+		times_base_number = repeated_number
+		times_amount = amount_of_numbers
+		
+		resultado_final = str(repeated_number) + "x" + str(amount_of_numbers)
 		
 		var addition_array = []
 		for i in range(amount_of_numbers):
@@ -133,6 +150,11 @@ func roll():
 				expression_string += " + "
 				
 		$Panel/Label.bbcode_text = "[wave][center]" + expression_string
+		buttons_unique_fix(resultado_final)
+
+	# ==========================================
+	# MODO: EXPRESSÕES / OUTROS
+	# ==========================================
 	else:
 		var Sinais = ["+", "-"]
 		if problem_type == types.simple_plus:
@@ -176,37 +198,15 @@ func roll():
 		if display_string.count(":") == 2:
 			roll()
 			get_tree().change_scene("res://lan/lecture_manager.tscn")
+			
+		buttons_unique_fix(str(resultado_final))
 
-	if problem_type == types.times:
-		var valor_base = int(resultado_final) / amount_of_numbers 
-		
-		for label_node in labels:
-			# Gera um multiplicador falso (ex: se o certo é 3, ele pode gerar 2, 4, 5...)
-			var fake_multiplier = amount_of_numbers + (randi() % 5) - 2
-			
-			if fake_multiplier == amount_of_numbers or fake_multiplier <= 0:
-				fake_multiplier = amount_of_numbers + 1
-				
-			label_node.text = str(valor_base) + "x" + str(fake_multiplier)
-			
-		var selected_to_be_right = labels[randi() % labels.size()]
-		selected_to_be_right.text = str(valor_base) + "x" + str(amount_of_numbers)
-	else:
-		for label_node in labels:
-			label_node.text = str(resultado_final + (randi() % 21) - 10)
-		var selected_to_be_right = labels[randi() % labels.size()]
-		selected_to_be_right.text = str(resultado_final)
-		
-	buttons_unique_fix(str(resultado_final))
 
 func check_if_correct(label):
 	var is_correct = false
 	
 	if problem_type == types.times:
-		var valor_base = int(resultado_final) / amount_of_numbers
-		var texto_correto_esperado = str(valor_base) + "x" + str(amount_of_numbers)
-		
-		if label.text == texto_correto_esperado:
+		if label.text == resultado_final:
 			is_correct = true
 
 	elif label.text.begins_with(str(resultado_final)):
@@ -234,7 +234,6 @@ func check_if_correct(label):
 			
 		wrong_instance.current_exercise = current_subject
 		add_child(wrong_instance)
-		
 
 func _on_Button_pressed(): check_if_correct($Button)
 func _on_Button2_pressed(): check_if_correct($Button2)
@@ -249,13 +248,14 @@ func buttons_unique_fix(texto_correto: String):
 		var valor_falso = ""
 		
 		if problem_type == types.times:
-			var valor_base = int(resultado_final) / amount_of_numbers
-			var fake_multiplier = amount_of_numbers + (randi() % 5) - 2
-			if fake_multiplier == amount_of_numbers or fake_multiplier <= 0:
-				fake_multiplier = amount_of_numbers + 1
-			valor_falso = str(valor_base) + "x" + str(fake_multiplier)
+			var fake_multiplier = times_amount + (randi() % 5) - 2
+			
+			if fake_multiplier == times_amount or fake_multiplier <= 0:
+				fake_multiplier = times_amount + 1
+				
+			valor_falso = str(times_base_number) + "x" + str(fake_multiplier)
 		else:
-			valor_falso = str(resultado_final + (randi() % 21) - 10)
+			valor_falso = str(int(resultado_final) + (randi() % 21) - 10)
 			
 		if not valor_falso in valores:
 			valores.append(valor_falso)

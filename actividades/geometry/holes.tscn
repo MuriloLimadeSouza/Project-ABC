@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/WhiteLearn/shape_0003.png" type="Texture" id=9]
 [ext_resource path="res://Assets/WhiteLearn/shape_0004.png" type="Texture" id=10]
 
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 69.857
 

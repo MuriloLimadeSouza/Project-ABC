@@ -19,15 +19,16 @@ func _on_aluno_desconectou(peer_id):
 		atualizar_lista_visual()
 
 # Esta função é acionada pela ponte do script Lan
-func receive_puppet_data(player_name, is_teacher):
+func receive_puppet_data(player_name, is_teacher, current_lecture, mistakes):
 	var sender_id = get_tree().get_rpc_sender_id()
 	
 	lista_alunos[sender_id] = {
 		"name": player_name,
-		"teacher": is_teacher
+		"teacher": is_teacher,
+		"current_lecture": Lan.current_lecture,
+		"mistakes": 0
 	}
 	
-	print("Professor recebeu o aluno: ", player_name)
 	atualizar_lista_visual()
 
 onready var label = $RichTextLabel
@@ -54,6 +55,6 @@ func atualizar_lista_visual():
 			
 			# Suporta tanto RichTextLabel quanto Label comum
 			if node_texto is RichTextLabel:
-				node_texto.bbcode_text = dados["name"]
+				node_texto.bbcode_text = dados["name"] + dados["current_lecture"] + dados["mistakes"]
 			else:
-				node_texto.text = dados["name"]
+				node_texto.text = dados["name"] + dados["current_lecture"] + dados["mistakes"]

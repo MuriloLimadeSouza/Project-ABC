@@ -44,7 +44,7 @@ func _on_Button3_pressed():
 	"max_points": 0,
 	"teacher": false,
 	"contrast": false,
-	"number": 1,
+	"number": 0,
 	"reversed": false
 }
 	PlayerVars.save_game_data()
@@ -91,3 +91,10 @@ func _on_Contrast_pressed():
 		PlayerVars.player_data["contrast"] = false
 	PlayerVars.save_game_data()
 	get_tree().change_scene("res://account/settings.tscn")
+
+
+func _on_Itch_pressed():
+	if OS.has_feature("HTML5"):
+		JavaScript.eval("window.open('https://abc-simples-br.itch.io/abc-simples-br')")
+	else:
+		OS.shell_open("https://abc-simples-br.itch.io/abc-simples-br")

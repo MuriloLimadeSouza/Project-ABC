@@ -42,9 +42,9 @@ config/windows_native_icon="res://game_icon.ico"
 
 [autoload]
 
-Save="*res://save.gd"
+Save="*res://account/save.gd"
 Lan="*res://lan/networkmanager.gd"
-Inputs="*res://inputs.gd"
+Inputs="*res://account/inputs.gd"
 PlayerVars="*res://account/player_vars.gd"
 TTS="*res://tts.gd"
 Globaltext2Tts="*res://globaltext2tts.gd"
@@ -65,7 +65,7 @@ singletons=[  ]
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
-theme/custom="res://base_font_theme.tres"
+theme/custom="res://Assets/base_font_theme.tres"
 
 [input]
 

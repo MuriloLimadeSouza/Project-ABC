@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://base_font_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/base_font_theme.tres" type="Theme" id=1]
 [ext_resource path="res://actividades/bars/bar_manager.gd" type="Script" id=2]
 [ext_resource path="res://Assets/WhiteLearn/Blue Winter.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://scrolling_background.tscn" type="PackedScene" id=4]

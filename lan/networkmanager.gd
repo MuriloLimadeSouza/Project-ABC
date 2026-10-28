@@ -26,13 +26,12 @@ func host_classroom():
 	get_tree().network_peer = peer
 	print("Classroom hosted via WebSockets on port ", DEFAULT_PORT)
 
-# Certifique-se de que a palavra "remote" está escrita corretamente
-remote func _repassar_ao_professor(player_name, is_teacher):
+remote func _repassar_ao_professor(player_name, is_teacher, current_lecture, mistakes):
 	var nodes = get_tree().get_nodes_in_group("vbox_professor")
 	
 	if nodes.size() > 0:
-		var vbox = nodes[0] # IMPORTANTE: Pegamos o primeiro elemento do array retornado pelo grupo
-		vbox.receive_puppet_data(player_name, is_teacher)
+		var vbox = nodes[0]
+		vbox.receive_puppet_data(player_name, is_teacher, current_lecture, mistakes)
 	else:
 		print("Erro de sincronia: O VBoxContainer do professor não foi encontrado em nenhum nó ativo.")
 

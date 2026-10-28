@@ -11,7 +11,7 @@ var current_res_index = 2
 const BASE_DESIGN_SIZE = Vector2(900, 1440)
 
 func _input(event):
-	if event.is_action_pressed("esq"):
+	if event.is_action_pressed("esq") and not OS.has_feature("HTML5"):
 		get_tree().quit()
 
 	if event.is_action_pressed("resolution+"):
