@@ -26,7 +26,8 @@ A plataforma utiliza gamificação (desafios, pontuação e recompensas) para re
 | Plataforma | Status | Observação |
 | :--- | :--- | :--- |
 | **Windows** | **Disponível** | Compatível com Windows 7 e acima |
-| **Android** | *Em breve* | Aplicativo em fase de desenvolvimento |
+| **Android** | **Disponível** | Compatível tanto com dispositivos 32x tanto com 64x|
+| **Linux** | **Disponível** | Compatível tanto com dispositivos 32x tanto com 64x|
 | **Web** | **Disponível** | Versão de navegação direta pelo navegador |
 
 ---
@@ -53,7 +54,3 @@ A plataforma utiliza gamificação (desafios, pontuação e recompensas) para re
 Desenvolvido por Davi e Murilo, estudantes do 9º ano do Ensino Fundamental.
 
 ---
-
-## Licença
-
-Este projeto é de código aberto sob a licença MIT. Qualquer pessoa pode utilizar, modificar e distribuir o software livremente.
