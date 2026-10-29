@@ -195,7 +195,7 @@ scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Matemática/ScrollContainer"]
 margin_right = 1226.0
-margin_bottom = 2496.0
+margin_bottom = 2630.0
 custom_constants/separation = 35
 alignment = 1
 
@@ -595,12 +595,18 @@ placeholder_text = "0"
 caret_blink = true
 script = ExtResource( 4 )
 
-[node name="Button" type="Button" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
 margin_top = 2202.0
 margin_right = 1226.0
-margin_bottom = 2496.0
+margin_bottom = 2301.0
+fit_content_height = true
+
+[node name="Button" type="Button" parent="TabContainer/Matemática/ScrollContainer/VBoxContainer"]
+margin_top = 2336.0
+margin_right = 1226.0
+margin_bottom = 2630.0
 text = "
-criar
+gerar questões
 "
 
 [node name="português" type="Tabs" parent="TabContainer"]
@@ -618,7 +624,7 @@ margin_left = -305.1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/português/ScrollContainer2"]
 margin_right = 1215.0
-margin_bottom = 2234.0
+margin_bottom = 2368.0
 custom_constants/separation = 35
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="TabContainer/português/ScrollContainer2/VBoxContainer"]
@@ -1036,12 +1042,18 @@ placeholder_text = "0"
 caret_blink = true
 script = ExtResource( 4 )
 
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/português/ScrollContainer2/VBoxContainer"]
+margin_top = 1940.0
+margin_right = 40.0
+margin_bottom = 2138.0
+fit_content_height = true
+
 [node name="Button" type="Button" parent="TabContainer/português/ScrollContainer2/VBoxContainer"]
 margin_top = 1940.0
 margin_right = 1215.0
 margin_bottom = 2234.0
 text = "
-criar
+gerar questões
 "
 
 [node name="modificadores" type="Tabs" parent="TabContainer"]
@@ -1050,31 +1062,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 108.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/modificadores"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/modificadores"]
 anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -448.5
-margin_top = -659.5
-margin_right = 448.5
-margin_bottom = 659.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -450.0
+margin_right = 375.0
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/modificadores/VBoxContainer"]
-margin_right = 897.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/modificadores/ScrollContainer"]
+margin_right = 900.0
+margin_bottom = 2213.0
+rect_min_size = Vector2( 900, 0 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
+margin_right = 900.0
 margin_bottom = 99.0
 fit_content_height = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/modificadores/VBoxContainer"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
 margin_top = 103.0
-margin_right = 897.0
+margin_right = 900.0
 margin_bottom = 603.0
 rect_min_size = Vector2( 0, 500 )
 bbcode_enabled = true
-bbcode_text = "[wave][center]ordem reversa:"
-text = "ordem reversa:"
+bbcode_text = "[wave][center]ordem aleatória:"
+text = "ordem aleatória:"
 
-[node name="Button4" type="Button" parent="TabContainer/modificadores/VBoxContainer/RichTextLabel"]
+[node name="Random" type="Button" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel3"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -197.0
@@ -1082,6 +1096,108 @@ margin_top = 233.0
 margin_right = 173.0
 margin_bottom = 357.0
 text = " não"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
+margin_top = 607.0
+margin_right = 900.0
+margin_bottom = 1107.0
+rect_min_size = Vector2( 0, 500 )
+bbcode_enabled = true
+bbcode_text = "[wave][center]ordem reversa:"
+text = "ordem reversa:"
+
+[node name="Button4" type="Button" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -197.0
+margin_top = 233.0
+margin_right = 173.0
+margin_bottom = 357.0
+text = " não"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
+margin_top = 1111.0
+margin_right = 900.0
+margin_bottom = 1611.0
+rect_min_size = Vector2( 0, 500 )
+bbcode_enabled = true
+bbcode_text = "[wave][center]poder pular questões:"
+text = "poder pular questões:"
+
+[node name="Skip" type="Button" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -185.0
+margin_top = 76.0
+margin_right = 185.0
+margin_bottom = 200.0
+text = " não"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
+margin_top = 1615.0
+margin_right = 900.0
+margin_bottom = 1813.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[center][wave]amplitude de valores:"
+text = "amplitude de valores:"
+fit_content_height = true
+
+[node name="LineEdit2" type="LineEdit" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 115.0
+margin_right = 120.0
+margin_bottom = 213.0
+align = 1
+max_length = 3
+placeholder_text = "20"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
+margin_top = 1817.0
+margin_right = 900.0
+margin_bottom = 2213.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "
+
+[center][wave]quantidade de números por conta:"
+text = "
+
+quantidade de números por conta:"
+fit_content_height = true
+
+[node name="LineEdit2" type="LineEdit" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel6"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 249.0
+margin_right = 120.0
+margin_bottom = 347.0
+align = 1
+max_length = 3
+placeholder_text = "20"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="TabContainer/modificadores/ScrollContainer/VBoxContainer"]
+margin_top = 1817.0
+margin_right = 900.0
+margin_bottom = 2213.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "
+
+"
+text = "
+
+"
+fit_content_height = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -1109,5 +1225,7 @@ text = " X "
 
 [connection signal="pressed" from="TabContainer/Matemática/ScrollContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TabContainer/português/ScrollContainer2/VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="TabContainer/modificadores/VBoxContainer/RichTextLabel/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel3/Random" to="." method="_on_Random_pressed"]
+[connection signal="pressed" from="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="TabContainer/modificadores/ScrollContainer/VBoxContainer/RichTextLabel5/Skip" to="." method="_on_Skip_pressed"]
 [connection signal="pressed" from="Go Back" to="." method="_on_Go_Back_pressed"]

@@ -11,7 +11,9 @@ var player_data = {
 	"teacher": false,
 	"contrast":false,
 	"number": 0,
-	"reversed": false
+	"reversed": false,
+	"random": false,
+	"can_skip": false
 }
 
 func _ready():

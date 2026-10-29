@@ -50,6 +50,8 @@ func generate_playlist(lecture_data):
 
 	if PlayerVars.player_data["reversed"] == true:
 		playlist.invert()
+	if PlayerVars.player_data["random"] == true:
+		playlist.shuffle()
 
 func load_next_task():
 	if is_instance_valid(current_scene_node):

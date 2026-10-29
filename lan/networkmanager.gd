@@ -3,7 +3,8 @@ extends Node
 const DEFAULT_PORT = 8910
 var peer = null
 var current_lecture = {}
-var rand = false
+var reversed = false
+var random = false
 
 signal lecture_received
 
@@ -50,7 +51,7 @@ func join_classroom(ip_address):
 func _on_peer_connected(id):
 	if get_tree().is_network_server() and not current_lecture.empty():
 		rpc_id(id, "receive_lecture", current_lecture)
-		rpc_id(id, "modifiers", rand)
+		rpc_id(id, "modifiers", reversed, random)
 
 func get_classroom_ip() -> String:
 	if OS.has_feature("JavaScript"):
@@ -79,5 +80,6 @@ remotesync func receive_lecture(lecture_data):
 	Save.lectures = lecture_data
 	emit_signal("lecture_received")
 
-remotesync func modifiers(modifiers):
-	PlayerVars.player_data["reversed"] = modifiers
+remotesync func modifiers(reversed, random):
+	PlayerVars.player_data["reversed"] = reversed
+	PlayerVars.player_data["random"] = random

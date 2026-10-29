@@ -61,7 +61,7 @@ custom_colors/font_color_disabled = Color( 0, 0.596078, 0.858824, 1 )
 custom_colors/font_color_focus = Color( 0, 0.596078, 0.858824, 1 )
 custom_colors/font_color_hover_pressed = Color( 0, 0.596078, 0.858824, 1 )
 custom_colors/font_color = Color( 0, 0.596078, 0.858824, 1 )
-text = "+ clique aqui 
+text = "clique aqui 
 pra criar
 uma sala"
 

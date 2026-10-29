@@ -45,7 +45,9 @@ func _on_Button3_pressed():
 	"teacher": false,
 	"contrast": false,
 	"number": 0,
-	"reversed": false
+	"reversed": false,
+	"random": false,
+	"can_skip": false
 }
 	PlayerVars.save_game_data()
 	get_tree().change_scene("res://lan/inicial_screen.tscn")

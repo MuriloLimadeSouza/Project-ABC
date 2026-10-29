@@ -58,7 +58,8 @@ func _on_Button_pressed():
 		"analise_ling": int(analise_ling.text),
 	}
 	
-	Lan.rand = PlayerVars.player_data["reversed"]
+	Lan.reversed = PlayerVars.player_data["reversed"]
+	Lan.random = PlayerVars.player_data["random"]
 	
 # 2. Guarda no Save e na variável global do Lan ANTES de ligar a rede
 	if "Save" in self or has_node("/root/Save"):
@@ -121,3 +122,26 @@ func _on_Button4_pressed():
 			PlayerVars.player_data["reversed"] = false
 		false:
 			PlayerVars.player_data["reversed"] = true
+
+var texts2 = ["sim", "não"]
+
+func _on_Random_pressed():
+	texts2.invert()
+	$TabContainer/modificadores/VBoxContainer/RichTextLabel/Button4.text = texts2[1]
+	match PlayerVars.player_data["random"]:
+		true:
+			PlayerVars.player_data["random"] = false
+		false:
+			PlayerVars.player_data["random"] = true
+
+var texts3 = ["sim", "não"]
+
+func _on_Skip_pressed():
+	texts3.invert()
+	$TabContainer/modificadores/VBoxContainer/RichTextLabel/Button4.text = texts3[1]
+	match PlayerVars.player_data["can_skip"]:
+		true:
+			PlayerVars.player_data["can_skip"] = false
+		false:
+			PlayerVars.player_data["can_skip"] = true
+

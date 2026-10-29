@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	match PlayerVars.player_data["teacher"]:
 		true:
-			$Button.text = "+ clique aqui\n pra criar\n uma sala"
+			$Button.text = "clique aqui\n pra criar\n uma sala"
 		false:
 			$Button.text = "clique aqui\n para entrar\n numa sala"
 	if PlayerVars.player_data["player_name"].empty():
